@@ -19,7 +19,7 @@ function ResourceList({ resources }) {
 
   return (
     <section>
-      <h2>Subjects</h2>
+      <h2 className="subjects">Subjects</h2>
 
       <div className="filter">
         <button>All</button>

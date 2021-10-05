@@ -13,9 +13,6 @@ function ResourceItem({ resource }) {
       <li className="card">
         <div className="image">
           <img src={image} alt={title} />
-          <button onClick={handleLikes} className="likes">
-            👍{likes}
-          </button>
         </div>
         <div className="details">
           <h4>{title}</h4>
@@ -28,6 +25,9 @@ function ResourceItem({ resource }) {
         </div>
         <div className="extra">
           <span className="badge blue">{subject}</span>
+          <button onClick={handleLikes} className="likes">
+            👍{likes}
+          </button>
         </div>
       </li>
   );

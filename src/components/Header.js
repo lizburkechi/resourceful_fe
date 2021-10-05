@@ -8,8 +8,8 @@ function Header({ title, isDarkMode, onToggleDarkMode }) {
    
     return (
     <header>
-      <h1>
-      {title}
+      <h1 className="title">
+      + {title}
       </h1>
       <button onClick={handleDarkModeClick}>
         {isDarkMode ? "Dark" : "Light"} Mode

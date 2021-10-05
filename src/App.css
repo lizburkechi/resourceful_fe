@@ -14,9 +14,9 @@
   --blue-dark: #145cb3;
   --purple: #cda2ff;
   --green: #00ef7c;
-  --color: var(--turquoise);
+  --color: var(--white);
   --background: var(--dark-turquoise);
-  --primary: var(--black);
+  --primary: var(--blue);
 }
 
 /* layout */
@@ -27,7 +27,7 @@
 }
 
 body {
-  font-family: "Fira Code", monospace;
+  font-family: "roboto", monospace;
   font-size: 16px;
   color: var(--color);
   background-color: var(--background);
@@ -39,10 +39,15 @@ body {
   min-height: 100vh;
 }
 
-.App.light {
+.App .light {
   --color: var(--black);
   --background: var(--white);
-  --primary: var(--mid-turquoise);
+  --primary: var(--black);
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
 }
 
 section {
@@ -50,6 +55,10 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.subjects {
+  font-family: 'Roboto', ;
 }
 
 /* buttons */
@@ -62,7 +71,7 @@ button {
   cursor: pointer;
   color: var(--primary);
   background-color: var(--background);
-  border: 2px solid var(--dark-turquoise);
+  border: 2px solid var(--white);
   transition: background-color 0.2s;
 }
 
@@ -114,20 +123,13 @@ header {
   align-content: center;
 }
 
-.logo {
-  color: var(--turquoise);
-  font-size: 1.25em;
-  font-family: Helvetica;
-  margin-right: 0.5rem;
-}
-
 /* forms */
 .form {
   display: flex;
   flex-direction: column;
   width: 500px;
   margin: 0 auto;
-  border: 2px solid var(--dark-turquoise);
+  border: 2px solid var(--black);
   padding: 1.75rem;
 }
 
@@ -186,7 +188,7 @@ select:focus {
   max-width: 400px;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  border: 2px solid var(--dark-turquoise);
+  border: 2px solid var(--black);
 }
 
 .card .image {
@@ -198,20 +200,6 @@ select:focus {
 .card .image img {
   width: 100%;
   object-fit: cover;
-}
-
-.card .image .likes {
-  color: transparent;
-  text-shadow: 0 0 0 var(--turquoise);
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.card .image .likes:focus,
-.card .image .likes:hover {
-  color: transparent;
-  text-shadow: 0 0 0 var(--color);
 }
 
 .card .details {
@@ -228,6 +216,19 @@ select:focus {
 
 .card .extra {
   margin-top: auto;
+}
+
+.card .extra .likes {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  color: transparent;
+  text-shadow: 0 0 0 var(--yellow);
+}
+
+.card .extra .likes:focus,
+.card .extra .likes:hover {
+  color: transparent;
+  text-shadow: 0 0 0 var(--color);
 }
 
 .badge {
