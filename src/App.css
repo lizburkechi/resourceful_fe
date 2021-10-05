@@ -39,7 +39,7 @@ body {
   min-height: 100vh;
 }
 
-.App .light {
+.App.light {
   --color: var(--black);
   --background: var(--white);
   --primary: var(--black);
@@ -50,15 +50,16 @@ body {
   font-size: 3em;
 }
 
+.subjects {
+  font-family: 'roboto', monospace;
+  font-size: 2em;
+}
+
 section {
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.subjects {
-  font-family: 'Roboto', ;
 }
 
 /* buttons */
