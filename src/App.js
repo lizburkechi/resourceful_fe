@@ -10,7 +10,7 @@ function App() {
   const [resources, setResources] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  function handleAddResource() {
+  function handleFetchResources() {
     fetch("http://localhost:4000/resources")
     .then((r) => r.json())
     .then((resourceData) => {
@@ -34,7 +34,7 @@ function App() {
       isDarkMode={isDarkMode} 
       title="Resourceful" 
       /> 
-      {/* <button onClick={handlefetchResources}>Show Resources</button> */}
+      <button onClick={handleFetchResources}>Show Resources</button>
       <ResourceList resources={resources} />
       <ResourceForm onAddResource={handleAddResource} />
     </div>
