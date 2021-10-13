@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import './App.css';
 import Header from "./components/Header"; 
 import ResourceForm from "./components/ResourceForm";
@@ -10,13 +10,13 @@ function App() {
   const [resources, setResources] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  function handleFetchResources() {
+  useEffect(() => {
     fetch("http://localhost:4000/resources")
-    .then((r) => r.json())
-    .then((resourceData) => {
-      setResources(resourceData);
-    });
-  }
+      .then(response => response.json())
+      .then(resourceData => {
+        setResources(resourceData);
+      });
+  }, []);
   
   function handleToggleDarkMode() {
     setIsDarkMode(!isDarkMode);
@@ -34,7 +34,6 @@ function App() {
       isDarkMode={isDarkMode} 
       title="Resourceful" 
       /> 
-      <button onClick={handleFetchResources}>Show Resources</button>
       <ResourceList resources={resources} />
       <ResourceForm onAddResource={handleAddResource} />
     </div>
