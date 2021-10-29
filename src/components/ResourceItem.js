@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
 function ResourceItem({ resource }) {
 
-  const { title, about, subject, link, image } = resource;
+  const { id, title, about, subject, image } = resource;
   const [likes, setLikes] = useState(0);
 
   function handleLikes() {
@@ -13,21 +14,19 @@ function ResourceItem({ resource }) {
       <li className="card">
         <div className="image">
           <img src={image} alt={title} />
+          <button className="likes" onClick={handleLikes}>
+            👍{likes}
+          </button>
         </div>
         <div className="details">
           <h4>{title}</h4>
-          {about && <p>{about}</p>}
-          {link ? (
-            <p>
-              <a href={link}>Link</a>
-            </p>
-          ) : null} 
+          <p>{about}</p>
+          <p>
+            <Link to={`/resource/${id}`}>View</Link>
+          </p>
         </div>
         <div className="extra">
           <span className="badge blue">{subject}</span>
-          <button onClick={handleLikes} className="likes">
-            👍{likes}
-          </button>
         </div>
       </li>
   );

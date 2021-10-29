@@ -115,6 +115,27 @@ a:hover {
   background-color: var(--blue);
   border-bottom: 1px solid var(--blue);
 }
+a.button {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  font: inherit;
+  font-weight: 600;
+  color: inherit;
+  cursor: pointer;
+  color: var(--primary);
+  background-color: var(--background);
+  border: 2px solid var(--white);
+  transition: background-color 0.2s;
+}
+
+a.button.active,
+a.button:focus,
+a.button:hover {
+  outline: none;
+  color: var(--white);
+  background-color: var(--primary);
+  border: 2px solid var(--primary);
+}
 
 /* header */
 header {

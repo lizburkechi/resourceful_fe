@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 function ResourceForm({ onAddResource }) {
 
@@ -7,9 +8,12 @@ function ResourceForm({ onAddResource }) {
   const [subject, setSubject] = useState("")
   const [link, setLink] = useState("")
   const [image, setImage] = useState("")
+  const history = useHistory();
+  console.log(history);
 
   function handleSubmit(e) {
     e.preventDefault();
+
     const formData = {
       title: title,
       about: about,
@@ -18,6 +22,7 @@ function ResourceForm({ onAddResource }) {
       image: image,
       likes: 0,
     };
+
     fetch("http://localhost:4000/resources", {
       method: "POST",
       headers: {
@@ -28,6 +33,7 @@ function ResourceForm({ onAddResource }) {
       .then(r => r.json())
       .then(newResource => {
         onAddResource(newResource);
+        history.push(`/resource/${newResource.id}`)
       });
   }
 
