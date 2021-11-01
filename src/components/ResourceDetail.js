@@ -9,7 +9,7 @@ export default function ResourceDetail() {
     console.log(id);
 
         useEffect(() => {
-          fetch(`http://localhost:4000/resources/${id}`)
+          fetch(`http://localhost:3000/resources/${id}`)
           .then((r) => r.json())
           .then((resource) => {
               setResource(resource);

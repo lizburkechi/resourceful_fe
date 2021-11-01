@@ -23,7 +23,7 @@ function ResourceForm({ onAddResource }) {
       likes: 0,
     };
 
-    fetch("http://localhost:4000/resources", {
+    fetch("http://localhost:3000/resources", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

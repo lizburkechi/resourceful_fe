@@ -14,7 +14,7 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:4000/resources")
+    fetch("http://localhost:3000/resources")
       .then(response => response.json())
       .then(setResources);
   }, []);

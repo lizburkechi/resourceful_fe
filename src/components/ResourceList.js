@@ -4,6 +4,7 @@ import ResourceItem from "./ResourceItem";
 
 function ResourceList({ resources }) {
   const [searchText, setSearchText] = useState("");
+  
 
   const filteredResources = resources.filter((resource) => {
     return resource.title.toLowerCase().includes(searchText.toLowerCase());
