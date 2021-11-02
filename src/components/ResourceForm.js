@@ -7,7 +7,7 @@ function ResourceForm({ onAddResource }) {
   const [about, setAbout] = useState("")
   const [subject, setSubject] = useState("")
   const [link, setLink] = useState("")
-  const [image, setImage] = useState("")
+  const [selectedImage, setSelectedImage] = useState(null)
   const history = useHistory();
   console.log(history);
 
@@ -19,7 +19,7 @@ function ResourceForm({ onAddResource }) {
       about: about,
       subject: subject,
       link: link,
-      image: image,
+      image: selectedImage,
       likes: 0,
     };
 
@@ -57,13 +57,20 @@ function ResourceForm({ onAddResource }) {
         onChange={(e) => setAbout(e.target.value)} 
         />
         <label htmlFor="subject">Subject</label>
-        <input 
+        <select 
         type="text" 
         id="subject" 
         name="subject"
         value={subject}
         onChange={(e) => setSubject(e.target.value)} 
-        />
+        >
+        <option value="CSS">CSS</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="React">React</option>
+        <option value="Redux">Redux</option>
+        <option value="Ruby">Ruby</option>
+        <option value="Other">Other</option>
+        </select>
         <label htmlFor="link">Link</label>
         <input 
         type="text" 
@@ -72,13 +79,13 @@ function ResourceForm({ onAddResource }) {
         value={link}
         onChange={(e) => setLink(e.target.value)} 
         />
-        <label htmlFor="image">Image URL</label>
+        <label htmlFor="image">Upload Image</label>
         <input 
-        type="text" 
+        type="file" 
         id="image" 
         name="image"
-        value={image}
-        onChange={(e) => setImage(e.target.value)} 
+        value={selectedImage}
+        onChange={(e) => setSelectedImage(e.target.files[0])} 
         />
         <button type="submit">Add Resource</button>
       </form>
