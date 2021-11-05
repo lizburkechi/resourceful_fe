@@ -14,7 +14,7 @@ function Header({ title, isDarkMode, onToggleDarkMode }) {
       </h1>
       <nav>
         <NavLink className="button" to="/resource-list">
-          All Resources 
+          See Resources 
         </NavLink>
         <NavLink className="button" to="/resource-form">
           Add Resource

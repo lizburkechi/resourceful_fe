@@ -23,13 +23,13 @@ function ResourceList({ resources }) {
       <h2 className="subjects">Subjects</h2>
 
       <div className="filter">
-        <button>All</button>
-        <button>CSS</button>
-        <button>Javascript</button>
-        <button>React</button>
-        <button>Redux</button>
-        <button>Ruby</button>
-        <button>Other</button>
+        <button >All</button>
+        <button >CSS</button>
+        <button >Javascript</button>
+        <button >React</button>
+        <button >Redux</button>
+        <button >Ruby</button>
+        <button >Other</button>
       </div>
       <input onChange={handleSearchInput} type="text" placeholder="Search..." />
 

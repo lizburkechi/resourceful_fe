@@ -3,13 +3,13 @@ import { useHistory } from "react-router-dom";
 
 function ResourceForm({ onAddResource }) {
 
-  const [title, setTitle] = useState("")
-  const [about, setAbout] = useState("")
-  const [subject, setSubject] = useState("")
-  const [link, setLink] = useState("")
-  const [selectedImage, setSelectedImage] = useState(null)
+  const [title, setTitle] = useState("");
+  const [about, setAbout] = useState("");
+  const [subject, setSubject] = useState("");
+  const [link, setLink] = useState("");
+  const [image, setImage] = useState("");
   const history = useHistory();
-  console.log(history);
+  // console.log(history);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,7 +19,7 @@ function ResourceForm({ onAddResource }) {
       about: about,
       subject: subject,
       link: link,
-      image: selectedImage,
+      image: image,
       likes: 0,
     };
 
@@ -79,13 +79,13 @@ function ResourceForm({ onAddResource }) {
         value={link}
         onChange={(e) => setLink(e.target.value)} 
         />
-        <label htmlFor="image">Upload Image</label>
-        <input 
-        type="file" 
+        <label htmlFor="image">Image URL</label>
+        <input
+        type="text" 
         id="image" 
         name="image"
-        value={selectedImage}
-        onChange={(e) => setSelectedImage(e.target.files[0])} 
+        value={image}
+        onChange={(e) => setImage(e.target.value)} 
         />
         <button type="submit">Add Resource</button>
       </form>
